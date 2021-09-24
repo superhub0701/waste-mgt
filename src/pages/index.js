@@ -42,6 +42,14 @@ const useStyles = makeStyles(theme=> ({
     height: 100,
     [theme.breakpoints.down(768)]: {height: 80}
   },
+  titleContainer: {
+    lineHeight: '56px', textShadow: '1px 3px 1px grey', marginBottom: 24,
+    [theme.breakpoints.down(576)]: {lineHeight: '40px', marginBottom: 16}
+  },
+  title: {
+    fontSize: 56,
+    [theme.breakpoints.down(576)]: {fontSize: 40},
+  },
 }))
 
 const Main = () => {
@@ -98,10 +106,14 @@ const Main = () => {
         <div className={`col-12 d-flex align-items-center ${classes.logoContainer}`}>
           <img className={classes.logo_img} src={logoIcon} alt={'logo img'} />
         </div>
+        <div className={`col-12 d-flex flex-column align-items-center ${classes.titleContainer}`}>
+          <div className={classes.title}>BioDigester</div>
+          <div className={classes.title}>Recording System</div>
+        </div>
         <div className={"col-12"}>
           <Dashboard />
         </div>
-        <div className={"col-12 d-none d-sm-flex justify-content-end text-break"} style={{fontSize: 32}}>
+        <div className={"col-12 d-none d-sm-flex align-items-end justify-content-end text-break"} style={{fontSize: 32, textShadow: '2px 3px 5px black', height: 90}}>
           {currentTime}
         </div>
       </div>
